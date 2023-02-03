@@ -1,0 +1,61 @@
+import java.io.*;
+import java.lang.*;
+
+abstract class Shape
+{
+	int l,b;
+	Shape(int x, int y)
+	{
+		l=x;
+		b=y;
+	}
+	abstract double area();
+	void display()
+	{
+		System.out.println("Parent Display");
+	}
+}
+ 
+class Rectangle extends Shape
+{
+	Rectangle(int x,int y)
+	{
+		super(x,y);
+	}
+	double area()
+	{
+		return(l*b);
+	}
+	void display()
+	{
+		System.out.println("Rectangle Display");
+	}
+}
+
+class Triangle extends Shape
+{
+	Triangle(int x,int y)
+	{
+		super(x,y);
+	}
+	double area()
+	{
+		return(0.5*l*b);
+	}
+	void display()
+	{
+		System.out.println("Triangle Display");
+	}
+}
+
+class AbstractDemo
+{
+	public static void main(String args[])
+	{
+		Rectangle r=new Rectangle(4,3);
+		r.display();
+		Triangle t=new Triangle(4,5);
+		t.display();
+		double ra=r.area();
+		double ta=t.area();
+		System.out.println("Area of Rectangle= 
