@@ -1,0 +1,34 @@
+//method 2 -implents
+import java.lang.*;
+class AAA extends Thread
+{
+    String nm;
+    AAA(String name)
+    {
+        nm=name;
+    }
+public void run() //start method vilikumbo run()method use cheyanam
+ {
+  System.out.println("Running"+nm);
+   try
+ {
+    for(int i = 8;i>=0;i--)
+    {
+        System.out.println(i);
+       
+       Thread.sleep(1000);
+    }        
+ }
+ catch(InterruptedException e) {System.out.println (e);}
+ }
+}
+class th2
+{
+  public static void main(String args[])
+  {
+    AAA a = new AAA("THREAD a"); // thread obj 
+    //create a thread by passing an obj
+    Thread t=new Thread(a);
+    t.start();// start execution //runnable
+  }
+}
