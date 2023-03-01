@@ -1,0 +1,31 @@
+package JDBCPGms;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+//  value by the user
+
+public class value {
+
+	public static void main(String[] args) {
+	try
+	{
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		Connection con= DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","mca","mca");
+		Statement stmt =con.createStatement();
+		String ti="t012";
+		String ta="milu";
+		String  aq="kottyam";
+		String q=" insert into emptab1 (' " +ti+ "', '" +ta+"' , '" +aq+"')" ;
+		System.out.println( " inserted ");
+		con.close();
+		
+	}
+	catch ( Exception  e )
+	{
+		System.out.println(e);
+	}
+
+	}
+
+}
