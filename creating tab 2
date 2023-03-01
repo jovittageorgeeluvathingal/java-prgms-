@@ -1,0 +1,26 @@
+package JDBCPGms;
+
+import java.sql.*;
+import java.sql.DriverManager;
+import java.sql.Statement;
+
+public class test12 {
+
+	public static void main(String[] args) {
+	   try
+	   {
+		    Class.forName("oracle.jdbc.driver.OracleDriver");
+		    Connection con =DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","mca","mca");
+		    Statement stmt =con.createStatement();
+		    stmt.executeUpdate("create table emptab1 (emid varchar2(20) not null ,emName varchar2(20),emaddress varchar2(20))");
+		    System.out.println(" Table created ");
+		    con.close();
+		    
+	   }
+        catch (Exception e)
+	   {
+        	System.out.println(e);
+	   }
+	}
+
+}
