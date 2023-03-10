@@ -1,0 +1,19 @@
+package networking;
+import java.net.URL;
+public class URLdem {
+
+	public static void main(String[] args) {
+	   try {
+		   URL u =new URL("https://www.google.com/");
+	   System.out.println(" the protocal is :" +u.getProtocol());
+	System.out.println(" the file name " +u.getFile());
+	System.out.println(" the  host name "+u.getHost());
+	System.out.println(" the path is" +u.getPath());
+	
+	   }
+  catch(Exception e)
+	   {System.out.println(e);
+	}
+
+}
+}
